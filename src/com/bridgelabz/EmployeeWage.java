@@ -11,15 +11,13 @@ public class EmployeeWage
     static final int IS_PART_TIME = 1;
     static final int WORKING_DAYS_PER_MONTH = 20;
     static final int MAX_WORKING_HOURS_PER_MONTH = 100;
-    public static void main(String[] args) {
-        System.out.println("Welcome to employee wage ");
-        int employeeCheck = (int) Math.floor(Math.random() * 10) % 3;,
+    static void employeeWage(){
+        int employeeCheck = (int) Math.floor(Math.random() * 10) % 3;
         System.out.println("employeeCheck");
         int totalWage = 0;
         int empHrs = 0, totalEmpHrs = 0, totalWorkingDays = 0;;
         while(totalWorkingDays < WORKING_DAYS_PER_MONTH && totalEmpHrs <=MAX_WORKING_HOURS_PER_MONTH) {
             totalWorkingDays++;
-
 
             switch (employeeCheck) {
                 case IS_FULL_TIME:
@@ -39,5 +37,9 @@ public class EmployeeWage
         }
         totalWage=totalEmpHrs*WAGE_PER_HOUR;
         System.out.println("Total Employee Wage = " + totalWage);
+    }
+    public static void main(String[] args) {
+        System.out.println("Welcome to employee wage ");
+        employeeWage();
     }
 }
